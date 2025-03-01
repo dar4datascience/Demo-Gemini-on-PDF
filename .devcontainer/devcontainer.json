@@ -1,0 +1,20 @@
+{
+    "name": "Python & Tesseract",
+    "dockerFile": "Dockerfile",
+    "context": ".",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-python.python",
+          "ms-python.vscode-pylance",
+          "redhat.vscode-yaml"
+        ],
+        "settings": {
+          "python.pythonPath": "/usr/local/bin/python",
+          "python.autoComplete.extraPaths": ["/usr/local/lib/python3.8/site-packages"]
+        }
+      }
+    },
+    "postCreateCommand": "pip install -r requirements.txt"
+  }
+  
