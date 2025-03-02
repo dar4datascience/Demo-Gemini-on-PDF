@@ -5,6 +5,10 @@ from io import BytesIO
 import google.generativeai as genai
 import os
 
+from app_utils import load_dotenv
+
+load_dotenv()
+
 # Set up the Google Gemini API client
 # client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
 
@@ -34,7 +38,7 @@ def ocr_image(image_bytes):
 # Function to save extracted images as .jpg
 def save_image_as_jpg(image_bytes, image_num):
     image = Image.open(BytesIO(image_bytes))
-    output_path = f"extracted_image_{image_num}.jpg"
+    output_path = f"extracted_images/extracted_image_{image_num}.jpg"
     image.save(output_path, "JPEG")
     print(f"Image saved as {output_path}")
 
@@ -72,7 +76,7 @@ for i, img_bytes in enumerate(images):
 # los precios de cortesia nos dicen QUE LOCAL OFRECE ESOS PRECIOS
 
 
-# are columns the same for sections?
+# are columns the same for sections? not always may change per category
 # enumarete sections to associate with order of tables
 # frutas y verduras
 # FLores y hortalizas
